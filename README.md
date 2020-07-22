@@ -1,21 +1,29 @@
 # Webdev Project 19
 
-Last updated: 21/07/2020
-A code exercise done to remind my mind after so many time not coding.
+Last updated: 21/07/2020  
+A code exercise done to remind my mind.
 
 ## :smile: **Getting Started/Brief Description**
+
+A website that fetch questions and quizzes from a [public API](https://opentdb.com/api_config.php) and be presented for users to solve by clicking the right answer.
 
 ## :computer: **Prerequisites/Built With/Technologies used**
 
 - React
-  - `create-react-app` with `typescript` option
-  - `style-components`
-  - `axios`
+  - Create React App with `typescript` option
+  - `style-components` module
+  - Axios
+  - ESLint + Prettier
 - Typescript
 
 ## :page_facing_up: **Installing/Running**
 
+- `npm i`
+- `npm start`
+
 ## :car: **Deployment**
+
+**This was intentionally left blank.**
 
 ## :memo: **Notes**
 
