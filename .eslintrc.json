@@ -1,0 +1,69 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended", // installed by react-scripts
+    "plugin:jsx-a11y/recommended", // installed by react-scripts
+    "plugin:@typescript-eslint/eslint-recommended", // for typescript
+    "plugin:@typescript-eslint/recommended", // for typescript
+    // "prettier/@typescript-eslint", // Uses eslint-config-prettier to disable ESLint rules from @typescript-eslint/eslint-plugin that would conflict with prettier, ADD THIS WHEN SEE CONFLICTS BETWEEN typescript and prettier
+    "plugin:node/recommended", // for nodeJS
+    "plugin:import/errors", // installed by react-scripts
+    "plugin:import/warnings",
+    "plugin:prettier/recommended" // this line must be last, enables eslint-plugin-prettier and displays prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
+  ],
+  "plugins": [
+    "react-hooks", // this dont have plugin recommended in extends
+    "@typescript-eslint"
+  ],
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true
+  },
+  "parser": "@typescript-eslint/parser", // Specifies the ESLint parser
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module", // Allows for the use of imports
+    "ecmaFeatures": {
+      "jsx": true // Allows for the parsing of JSX
+    }
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
+  "rules": {
+    // personal rule taste updated from eslint:recommended, rules with *** is added as best practice but dont come with recommended config
+    "no-unused-vars": "warn", // reduce the warning level
+    "no-var": "warn", // ***
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }], // ***
+    "spaced-comment": "error", // ***
+    "no-magic-numbers": [
+      "error",
+      { "ignore": [0, 1], "ignoreArrayIndexes": true }
+    ], // ***
+    "eqeqeq": "error", // ***
+    // personal rule taste updated from plugin:node/recommended
+    "node/no-unsupported-features/es-syntax": "off", // override it as dont understand the warning atm
+    "node/no-extraneous-import": [
+      "error",
+      {
+        "allowModules": ["prop-types"]
+      }
+    ], // allow using prop-types for checking props
+    "node/no-missing-import": [
+      "error",
+      {
+        "tryExtensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    ],
+    // personal rule taste for prettier
+    "prettier/prettier": "warn", // use from "plugin:prettier/recommended", but reduce level of warning
+    // add this for later learning hook
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
+  }
+}
